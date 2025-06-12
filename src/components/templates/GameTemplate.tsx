@@ -58,28 +58,30 @@ export const GameTemplate = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       <Header />
       <div className="flex-grow">
         {!showGame ? (
           <MainSection onShowGame={() => setShowGame(true)} />
         ) : isGameOver ? (
-          <div className={`container max-w-sm p-8 mx-auto mt-8 text-center bg-white border shadow-md rounded-xl ${isWin ? 'border-green-500' : 'border-red-500'}`}>
-            <div className={`mb-6 text-xl font-bold ${isWin ? 'text-green-600' : 'text-red-600'}`}>{message}</div>
-            <div className="flex justify-center space-x-4">
-              <Button 
-                onClick={resetGame} 
-                className="px-6"
-              >
-                Coba Lagi
-              </Button>
-              <Button 
-                onClick={handleBack}
-                variant="secondary"
-                className="px-6"
-              >
-                Kembali
-              </Button>
+          <div className="flex items-center justify-center w-full px-4 mt-8">
+            <div className={`w-11/12 max-w-xs p-5 mx-auto text-center bg-white border shadow-md rounded-xl md:p-8 md:max-w-sm ${isWin ? 'border-green-500' : 'border-red-500'}`}>
+              <div className={`mb-4 text-base font-bold md:text-xl md:mb-6 ${isWin ? 'text-green-600' : 'text-red-600'}`}>{message}</div>
+              <div className="flex flex-col justify-center w-full gap-3 md:flex-row md:gap-4">
+                <Button 
+                  onClick={resetGame} 
+                  className="w-full py-2 md:w-auto md:px-6"
+                >
+                  Coba Lagi
+                </Button>
+                <Button 
+                  onClick={handleBack}
+                  variant="secondary"
+                  className="w-full py-2 md:w-auto md:px-6"
+                >
+                  Kembali
+                </Button>
+              </div>
             </div>
           </div>
         ) : (
@@ -91,7 +93,7 @@ export const GameTemplate = () => {
         )}
         
         {message && !isGameOver && (
-          <div className="my-6 text-2xl font-bold text-center text-slate-700">
+          <div className="my-4 text-xl font-bold text-center text-slate-700 md:my-6 md:text-2xl">
             GOOD LUCK !💋
           </div>
         )}
