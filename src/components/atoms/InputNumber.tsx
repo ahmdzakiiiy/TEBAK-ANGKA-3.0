@@ -11,7 +11,7 @@ export const InputNumber = ({
   onChange,
   min = 1,
   max = 10,
-  className = ''
+  className = "",
 }: InputNumberProps) => {
   const increment = () => {
     if (value < max) {

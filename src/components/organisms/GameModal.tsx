@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Button } from '../atoms/Button';
-import { InputNumber } from '../atoms/InputNumber';
-import { Text } from '../atoms/Text';
+import { useState } from "react";
+import { Button } from "../atoms/Button";
+import { InputNumber } from "../atoms/InputNumber";
+import { Text } from "../atoms/Text";
 
 interface GameModalProps {
   isVisible: boolean;
@@ -20,7 +20,7 @@ export const GameModal = ({ isVisible, onGuess, message }: GameModalProps) => {
         <Text className="text-sm font-medium md:text-base lg:text-lg">
           Guess the number 1-10
         </Text>
-        
+
         {message && (
           <Text variant="error" className="my-2 text-sm md:text-base md:my-3">
             {message}
@@ -32,10 +32,7 @@ export const GameModal = ({ isVisible, onGuess, message }: GameModalProps) => {
         </Text>
 
         <div className="my-3">
-          <InputNumber
-            value={guessNumber}
-            onChange={setGuessNumber}
-          />
+          <InputNumber value={guessNumber} onChange={setGuessNumber} />
         </div>
 
         <Button
