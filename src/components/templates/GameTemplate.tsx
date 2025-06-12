@@ -102,14 +102,17 @@ export const GameTemplate = () => {
             onGuess={handleGuess}
             message={message}
           />
-        )}
-
-        {message && !isGameOver && (
+        )}        {message && !isGameOver && (
           <div className="my-4 text-xl font-bold text-center text-slate-700 md:my-6 md:text-2xl">
             GOOD LUCK !💋
           </div>
         )}
       </div>
+      
+      <div className="px-4 py-6 mx-auto text-sm italic text-center text-slate-600 md:text-base md:max-w-lg">
+        Game tebak angka menggunakan React JS yang diperbarui dengan tampilan UI pada web menggunakan Tailwind CSS sehingga tampilan antarmuka game ini bisa cantik secantik Aldaa❤️
+      </div>
+      
       <Footer />
     </div>
   );
