@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Button } from '../atoms/Button';
-import { InputNumber } from '../atoms/InputNumber';
-import { Text } from '../atoms/Text';
+import { useState } from "react";
+import { Button } from "../atoms/Button";
+import { InputNumber } from "../atoms/InputNumber";
+import { Text } from "../atoms/Text";
 
 interface GameModalProps {
   isVisible: boolean;
@@ -15,28 +15,29 @@ export const GameModal = ({ isVisible, onGuess, message }: GameModalProps) => {
   if (!isVisible) return null;
 
   return (
-    <section className="h-full w-full bg-black bg-opacity-50 fixed flex justify-center items-center content-center left-0 top-0">
-      <div className="container max-w-sm p-2 text-center bg-white border shadow-lg rounded-xl text-slate-800 md:max-w-xl md:p-8 lg:max-w-xl lg:p-12">
-        <Text className="p-2 text-base font-normal md:text-lg">
+    <section className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+      <div className="w-11/12 max-w-xs p-4 text-center bg-white border shadow-lg rounded-xl text-slate-800 md:max-w-sm lg:max-w-md md:p-6">
+        <Text className="text-sm font-medium md:text-base lg:text-lg">
           Guess the number 1-10
         </Text>
-        
-        {message && <Text variant="error" className="mb-4">{message}</Text>}
 
-        <Text className="mb-4 text-lg font-semibold md:text-xl">
+        {message && (
+          <Text variant="error" className="my-2 text-sm md:text-base md:my-3">
+            {message}
+          </Text>
+        )}
+
+        <Text className="my-3 text-base font-semibold md:text-lg">
           Masukkan angka tebakanmu
         </Text>
 
-        <InputNumber
-          value={guessNumber}
-          onChange={setGuessNumber}
-          className="md:m-2"
-        />
-        <br />
+        <div className="my-3">
+          <InputNumber value={guessNumber} onChange={setGuessNumber} />
+        </div>
 
         <Button
           onClick={() => onGuess(guessNumber)}
-          className="mx-auto my-1"
+          className="w-full max-w-xs py-2 mx-auto my-2 md:w-auto md:px-8"
           type="submit"
         >
           Submit
