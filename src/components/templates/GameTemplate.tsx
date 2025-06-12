@@ -110,7 +110,7 @@ export const GameTemplate = () => {
         )}
       </div>
 
-      <div className="px-4 py-6 mx-auto text-sm italic text-center text-slate-600 md:text-base md:max-w-lg">
+      <div className="px-4 py-6 mx-auto font-medium text-center text-slate-600 md:text-base md:max-w-lg">
         Game tebak angka menggunakan React JS yang diperbarui dengan tampilan UI
         pada web menggunakan Tailwind CSS sehingga tampilan antarmuka game ini
         bisa cantik secantik Aldaa❤️
